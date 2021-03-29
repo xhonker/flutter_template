@@ -5,7 +5,7 @@ class AuthInterceptor extends Interceptor {
   Future onRequest(options) {
     final String token = 'token';
     if (token.isNotEmpty) {
-      options.headers['Authorization'] = 'token $token';
+      options.headers['Authorization'] = 'Bearer $token';
     }
     options.headers['User-Agent'] = 'Mozilla/5.0';
     options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
