@@ -40,10 +40,9 @@ class DioUtils {
     _dio = Dio(_options);
     _dio.interceptors.addAll(_interceptors);
     (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
-      client.findProxy = (uri) {
-        return "PROXY 192.168.0.100:8888";
-        // return "PROXY 192.168.110.192:8888";
-      };
+      // client.findProxy = (uri) {
+      //   return "PROXY 192.168.0.100:8888"; // TODO: proxy
+      // };
       client.badCertificateCallback = (cret, host, port) => true;
     };
   }
