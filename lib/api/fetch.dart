@@ -6,17 +6,17 @@ import 'package:flutter/foundation.dart';
 import 'base_entity.dart';
 
 List<Interceptor> _interceptors = [];
-String _baseUrl;
+late String _baseUrl;
 int _connectTimeout = 15000;
 int _receiveTimeout = 15000;
 int _sendTimeout = 10000;
 
 void configDio({
-  @required String baseUrl,
-  List<Interceptor> interceptors,
-  int connectTimeout,
-  int receiveTimeout,
-  int sendTimeout,
+  String? baseUrl,
+  List<Interceptor>? interceptors,
+  int? connectTimeout,
+  int? receiveTimeout,
+  int? sendTimeout,
 }) {
   _interceptors = interceptors ?? _interceptors;
   _baseUrl = baseUrl ?? _baseUrl;
@@ -29,7 +29,7 @@ class DioUtils {
   factory DioUtils() => _singleton;
   static DioUtils get instance => DioUtils();
   static final DioUtils _singleton = DioUtils._();
-  static Dio _dio;
+  static late Dio _dio;
   DioUtils._() {
     final BaseOptions _options = BaseOptions(
       baseUrl: _baseUrl,
@@ -47,8 +47,8 @@ class DioUtils {
     };
   }
 
-  Future<BaseEntity<T>> request<T>(String url,
-      {RequestMethod method = RequestMethod.get, Map<String, dynamic> params}) async {
+  Future<BaseEntity<T>?> request<T>(String url,
+      {RequestMethod method = RequestMethod.get, Map<String, dynamic>? params}) async {
     bool isPost = method == RequestMethod.post;
     try {
       var response = await _dio.request(url,

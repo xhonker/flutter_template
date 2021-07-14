@@ -13,7 +13,7 @@ import 'routers.dart';
 import 'api/index.dart';
 
 class App extends StatefulWidget {
-  App({Key key}) : super(key: key);
+  App({Key? key}) : super(key: key);
 
   @override
   _AppState createState() => _AppState();
@@ -75,7 +75,7 @@ class _AppState extends State<App> {
 }
 
 class AppHome extends StatefulWidget {
-  const AppHome({Key key}) : super(key: key);
+  const AppHome({Key? key}) : super(key: key);
 
   @override
   _AppHomeState createState() => _AppHomeState();

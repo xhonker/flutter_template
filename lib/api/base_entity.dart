@@ -1,9 +1,9 @@
 class BaseEntity<T> {
-  int code;
-  T data;
-  String message;
+  late int code;
+  late T data;
+  late String message;
 
-  BaseEntity({this.code, this.message, this.data});
+  BaseEntity({required this.code, required this.message, required this.data});
 
   BaseEntity.fromJson(Map<String, dynamic> json) {
     code = json['code'] as int;

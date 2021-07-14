@@ -18,7 +18,7 @@ mixin ListPage<T extends StatefulWidget> on State<T> implements BaseListPage {
   bool loading = true;
   bool loadingData = false;
   bool isMore = true;
-  ScrollController scrollController;
+  late ScrollController scrollController;
   List list = [];
 
   @override
@@ -56,7 +56,7 @@ mixin ListPage<T extends StatefulWidget> on State<T> implements BaseListPage {
     setState(() {});
   }
 
-  Widget handlerItem({int index, Type type}) {
+  Widget handlerItem({required int index, required Type type}) {
     switch (T) {
       case String: // 根据泛型 渲染list
         return Container();

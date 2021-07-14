@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/components/index.dart';
 
 class ComponentCacheImage extends StatelessWidget {
-  const ComponentCacheImage({Key key, this.imageUrl, this.width, this.height}) : super(key: key);
+  const ComponentCacheImage({Key? key, required this.imageUrl, this.width, this.height}) : super(key: key);
   final String imageUrl;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {

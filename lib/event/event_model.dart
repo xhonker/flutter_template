@@ -1,4 +1,4 @@
 class EventChangeExample {
   final String name;
-  EventChangeExample({this.name});
+  EventChangeExample({required this.name});
 }

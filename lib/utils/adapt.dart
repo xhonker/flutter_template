@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 
-import '../globalConfig.dart';
-
 class Adapt {
-  static int _designWidth = GlobalConfig.designWidth;
-  static MediaQueryData mediaQuery;
-  static double _width;
-  static double _height;
-  static double _rpx;
-  static double _pixeRatio;
-  static EdgeInsets _padding;
+  static late int _designWidth;
+  static late MediaQueryData mediaQuery;
+  static late double _width;
+  static late double _height;
+  static late double _rpx;
+  static late double _pixelRatio;
+  static late EdgeInsets _padding;
 
-  static init(BuildContext _) {
-    if (mediaQuery == null) {
-      mediaQuery = MediaQuery.of(_);
-      _width = mediaQuery.size.width;
-      _height = mediaQuery.size.height;
-      _pixeRatio = mediaQuery.devicePixelRatio;
-      _padding = mediaQuery.padding;
-      initRpx();
-    }
+  static init(BuildContext _, {int designWidth = 375}) {
+    _designWidth = designWidth;
+    mediaQuery = MediaQuery.of(_);
+    _width = mediaQuery.size.width;
+    _height = mediaQuery.size.height;
+    _pixelRatio = mediaQuery.devicePixelRatio;
+    _padding = mediaQuery.padding;
+    initRpx();
   }
 
   static initRpx() {
@@ -34,7 +31,7 @@ class Adapt {
   }
 
   static double onepx() {
-    return 1 / _pixeRatio;
+    return 1 / _pixelRatio;
   }
 
   static double screenW() {

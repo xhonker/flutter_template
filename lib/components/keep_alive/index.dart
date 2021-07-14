@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ComponentKeepAlive extends StatefulWidget {
-  ComponentKeepAlive({Key key, @required this.child}) : super(key: key);
+  ComponentKeepAlive({Key? key, required this.child}) : super(key: key);
   final Widget child;
   @override
   _ComponentKeepAliveState createState() => _ComponentKeepAliveState();

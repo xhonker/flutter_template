@@ -1,5 +1,5 @@
 class IBanner {
   final String img;
   final String router;
-  IBanner({this.img, this.router});
+  IBanner({required this.img, required this.router});
 }

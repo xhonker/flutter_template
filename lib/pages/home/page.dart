@@ -3,7 +3,7 @@ import 'package:flutter_template/components/index.dart';
 import 'package:flutter_template/mixins/page.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> with MixinPage {
   }
 
   @override
-  Future fetchData() {
+  Future fetchData() async {
     // TODO: api fetch data
   }
 

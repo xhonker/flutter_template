@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class BaseSafeScaffold extends StatelessWidget {
   const BaseSafeScaffold({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.title,
     this.backgroundColor,
     this.iconTheme,
@@ -16,13 +16,13 @@ class BaseSafeScaffold extends StatelessWidget {
 
   final dynamic title;
   final Widget child;
-  final Color backgroundColor;
-  final Color iconTheme;
-  final Color appBarBgColor;
+  final Color? backgroundColor;
+  final Color? iconTheme;
+  final Color? appBarBgColor;
   final Brightness brightness;
-  final Widget flexibleSpace;
-  final List<Widget> actions;
-  final PreferredSizeWidget bottom;
+  final Widget? flexibleSpace;
+  final List<Widget>? actions;
+  final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class BaseSafeScaffold extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         leading: Visibility(
-          visible: Navigator.of(context)?.canPop() ?? false,
+          visible: Navigator.of(context).canPop(),
           child: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: () => Navigator.of(context).pop()),
         ),
         title: title != null
